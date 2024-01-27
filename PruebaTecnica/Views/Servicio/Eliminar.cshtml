@@ -1,0 +1,43 @@
+﻿@model PruebaTecnica.Models.Servicio
+
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-action="Eliminar">
+    <input asp-for="Id" hidden />
+    <div class="border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger">
+        </div>
+        <div class="form-group row">
+            <h2 class="text-danger pl-3">Esta seguro de eliminar este Servicio</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="NombreServicio" class="form-label">Nombre Servicio</label>
+                    <input asp-for="NombreServicio" disabled class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Descripcion" class="form-label">Descripcion</label>
+                    <input asp-for="Descripcion" disabled class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="d-grid gap-2 d-md-block">
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <a asp-controller="Cliente" asp-action="Index" class="btn btn-success">Regresar</a>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
